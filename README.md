@@ -1,18 +1,21 @@
-# Express Events Starter
+# BED Final Project Starter
 
-This repository contains starter code for the Express Events exercise. There are two two types of folders in this repository: `starter` and `solution`. `starter` only contains boilerplate code for the given course exercise, while `solution` contains the entire code that solves the given problem.
+This repository contains starter code for the Bookings project.
 
 ## How to get started
 
-Sometimes in the course, we might suggest you to download the "starter" code as a ZIP file. There is always an option to get started right from this repo though. You can either fork, or download this repository, and create your own solution as a root-level folder. This way, you have continuous access to the solution.
+You can clone the repo, install and run the app with the following commands:
 
-However, we recommend you to try solving the exercises as independently as possible - you will find very similar code in the course contents, which you can also use as reference.
+```plaintext
+npm install
+npm run dev
+```
 
 ## Starting the App
 
 To start the app, follow these steps:
 
-1. Create a `.env` file in the root directory of the `starter` or `solution` folder.
+1. Create a `.env` file in the root directory.
 2. Replace the values for `AUTH_SECRET_KEY` and `SENTRY_DSN` with your own values.
 
 ```plaintext
@@ -36,7 +39,7 @@ To run the tests, perform the following steps:
   "values": [
     {
       "key": "baseUrl",
-      "value": "http://localhost:3000",
+      "value": "http://0.0.0.0:3000",
       "type": "default",
       "enabled": true
     }
@@ -47,7 +50,7 @@ To run the tests, perform the following steps:
 }
 ```
 
-3. If you server is running on a diferent port or URL, change the value `http://localhost:3000` to your server's data (this is the default one though).
+3. If your server is running on a different port or URL, change the value `http://0.0.0.0:3000` to your server's data (this is the default one though).
 4. Run the following command
 
 ```plaintext
