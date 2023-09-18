@@ -1,214 +1,525 @@
-openapi: 3.0.0
+openapi: 3.1.0
 info:
-  title: Online Booking App API
-  version: 1.0.0
-  description: RESTful API for an online booking app using Express.js and Prisma
+    title: Online Booking App API
+    version: 1.0.0
+    description: RESTful API for an online booking app using Express.js and Prisma
 servers:
-  - url: https://api.example.com/v1
+    - url: https://api.example.com/v1
 paths:
-  /login:
-    post:
-      summary: User Login
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                username:
+    /login:
+        post:
+            summary: User Login
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                username:
+                                    type: string
+                                password:
+                                    type: string
+            responses:
+                "200":
+                    description: Successful login
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                properties:
+                                    token:
+                                        type: string
+                "401":
+                    description: Unauthorized
+    /users:
+        get:
+            summary: Get all users
+            responses:
+                "200":
+                    description: Successful retrieval of users
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/User"
+        post:
+            summary: Create a new user
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserCreate"
+            responses:
+                "201":
+                    description: User created successfully
+                "400":
+                    description: Bad request
+    /users/{userId}:
+        parameters:
+            - in: path
+              name: userId
+              required: true
+              schema:
                   type: string
-                password:
+        get:
+            summary: Get user by ID
+            responses:
+                "200":
+                    description: Successful retrieval of user
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/User"
+                "404":
+                    description: User not found
+        put:
+            summary: Update user by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/UserUpdate"
+            responses:
+                "200":
+                    description: User updated successfully
+                "404":
+                    description: User not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete user by ID
+            responses:
+                "204":
+                    description: User deleted successfully
+                "404":
+                    description: User not found
+    /hosts:
+        get:
+            summary: Get all hosts
+            responses:
+                "200":
+                    description: Successful retrieval of hosts
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Host"
+        post:
+            summary: Create a new host
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/HostCreate"
+            responses:
+                "201":
+                    description: Host created successfully
+                "400":
+                    description: Bad request
+    /hosts/{hostId}:
+        parameters:
+            - in: path
+              name: hostId
+              required: true
+              schema:
                   type: string
-      responses:
-        '200':
-          description: Successful login
-          content:
-            application/json:
+        get:
+            summary: Get host by ID
+            responses:
+                "200":
+                    description: Successful retrieval of host
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Host"
+                "404":
+                    description: Host not found
+        put:
+            summary: Update host by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/HostUpdate"
+            responses:
+                "200":
+                    description: Host updated successfully
+                "404":
+                    description: Host not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete host by ID
+            responses:
+                "204":
+                    description: Host deleted successfully
+                "404":
+                    description: Host not found
+    /properties:
+        get:
+            summary: Get all properties
+            responses:
+                "200":
+                    description: Successful retrieval of properties
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Property"
+        post:
+            summary: Create a new property
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/PropertyCreate"
+            responses:
+                "201":
+                    description: Property created successfully
+                "400":
+                    description: Bad request
+    /properties/{propertyId}:
+        parameters:
+            - in: path
+              name: propertyId
+              required: true
               schema:
-                type: object
-                properties:
-                  token:
-                    type: string
-        '401':
-          description: Unauthorized
-
-  /users:
-    get:
-      summary: Get all users
-      responses:
-        '200':
-          description: Successful retrieval of users
-          content:
-            application/json:
+                  type: string
+        get:
+            summary: Get property by ID
+            responses:
+                "200":
+                    description: Successful retrieval of property
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Property"
+                "404":
+                    description: Property not found
+        put:
+            summary: Update property by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/PropertyUpdate"
+            responses:
+                "200":
+                    description: Property updated successfully
+                "404":
+                    description: Property not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete property by ID
+            responses:
+                "200":
+                    description: Property deleted successfully
+                "404":
+                    description: Property not found
+    /amenities:
+        get:
+            summary: Get all amenities
+            responses:
+                "200":
+                    description: Successful retrieval of amenities
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Amenity"
+        post:
+            summary: Create a new amenity
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/AmenityCreate"
+            responses:
+                "201":
+                    description: Amenity created successfully
+                "400":
+                    description: Bad request
+    /amenities/{amenityId}:
+        parameters:
+            - in: path
+              name: amenityId
+              required: true
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
-
-  /hosts:
-    get:
-      summary: Get all hosts
-      responses:
-        '200':
-          description: Successful retrieval of hosts
-          content:
-            application/json:
+                  type: string
+        get:
+            summary: Get amenity by ID
+            responses:
+                "200":
+                    description: Successful retrieval of amenity
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Amenity"
+                "404":
+                    description: Amenity not found
+        put:
+            summary: Update amenity by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/AmenityUpdate"
+            responses:
+                "200":
+                    description: Amenity updated successfully
+                "404":
+                    description: Amenity not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete amenity by ID
+            responses:
+                "204":
+                    description: Amenity deleted successfully
+                "404":
+                    description: Amenity not found
+    /bookings:
+        get:
+            summary: Get all bookings
+            responses:
+                "200":
+                    description: Successful retrieval of bookings
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Booking"
+        post:
+            summary: Create a new booking
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/BookingCreate"
+            responses:
+                "201":
+                    description: Booking created successfully
+                "400":
+                    description: Bad request
+    /bookings/{bookingId}:
+        parameters:
+            - in: path
+              name: bookingId
+              required: true
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Host'
-
-  /properties:
-    get:
-      summary: Get all properties
-      responses:
-        '200':
-          description: Successful retrieval of properties
-          content:
-            application/json:
+                  type: string
+        get:
+            summary: Get booking by ID
+            responses:
+                "200":
+                    description: Successful retrieval of booking
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Booking"
+                "404":
+                    description: Booking not found
+        put:
+            summary: Update booking by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/BookingUpdate"
+            responses:
+                "200":
+                    description: Booking updated successfully
+                "404":
+                    description: Booking not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete booking by ID
+            responses:
+                "204":
+                    description: Booking deleted successfully
+                "404":
+                    description: Booking not found
+    /reviews:
+        get:
+            summary: Get all reviews
+            responses:
+                "200":
+                    description: Successful retrieval of reviews
+                    content:
+                        application/json:
+                            schema:
+                                type: array
+                                items:
+                                    $ref: "#/components/schemas/Review"
+        post:
+            summary: Create a new review
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/ReviewCreate"
+            responses:
+                "201":
+                    description: Review created successfully
+                "400":
+                    description: Bad request
+    /reviews/{reviewId}:
+        parameters:
+            - in: path
+              name: reviewId
+              required: true
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Property'
-
-  /amenities:
-    get:
-      summary: Get all amenities
-      responses:
-        '200':
-          description: Successful retrieval of amenities
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Amenity'
-
-  /bookings:
-    get:
-      summary: Get all bookings
-      responses:
-        '200':
-          description: Successful retrieval of bookings
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Booking'
-
-  /reviews:
-    get:
-      summary: Get all reviews
-      responses:
-        '200':
-          description: Successful retrieval of reviews
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/Review'
-
+                  type: string
+        get:
+            summary: Get review by ID
+            responses:
+                "200":
+                    description: Successful retrieval of review
+                    content:
+                        application/json:
+                            schema:
+                                $ref: "#/components/schemas/Review"
+                "404":
+                    description: Review not found
+        put:
+            summary: Update review by ID
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            $ref: "#/components/schemas/ReviewUpdate"
+            responses:
+                "200":
+                    description: Review updated successfully
+                "404":
+                    description: Review not found
+                "400":
+                    description: Bad request
+        delete:
+            summary: Delete review by ID
+            responses:
+                "204":
+                    description: Review deleted successfully
+                "404":
+                    description: Review not found
 components:
-  schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        username:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-        phoneNumber:
-          type: string
-        profilePicture:
-          type: string
+    schemas:
+        User:
+            type: object
+            properties:
+                id:
+                    type: string
+                username:
+                    type: string
+                name:
+                    type: string
+                email:
+                    type: string
+                phoneNumber:
+                    type: string
+                profilePicture:
+                    type: string
 
-    Host:
-      type: object
-      properties:
-        id:
-          type: string
-        username:
-          type: string
-        name:
-          type: string
-        email:
-          type: string
-        phoneNumber:
-          type: string
-        profilePicture:
-          type: string
+        Host:
+            type: object
+            properties:
+                id:
+                    type: string
+                username:
+                    type: string
+                name:
+                    type: string
+                email:
+                    type: string
+                phoneNumber:
+                    type: string
+                profilePicture:
+                    type: string
 
-    Property:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        location:
-          type: string
-        pricePerNight:
-          type: number
-        bedroomCount:
-          type: integer
-        bathRoomCount:
-          type: integer
-        maxGuestCount:
-          type: integer
-        hostId:
-          type: string
-        rating:
-          type: number
+        Property:
+            type: object
+            properties:
+                id:
+                    type: string
+                title:
+                    type: string
+                description:
+                    type: string
+                location:
+                    type: string
+                pricePerNight:
+                    type: number
+                bedroomCount:
+                    type: integer
+                bathRoomCount:
+                    type: integer
+                maxGuestCount:
+                    type: integer
+                hostId:
+                    type: string
+                rating:
+                    type: number
 
-    Amenity:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
+        Amenity:
+            type: object
+            properties:
+                id:
+                    type: string
+                name:
+                    type: string
 
-    Booking:
-      type: object
-      properties:
-        id:
-          type: string
-        userId:
-          type: string
-        propertyId:
-          type: string
-        checkinDate:
-          type: string
-          format: date-time
-        checkoutDate:
-          type: string
-          format: date-time
-        numberOfGuests:
-          type: integer
-        totalPrice:
-          type: number
-        bookingStatus:
-          type: string
+        Booking:
+            type: object
+            properties:
+                id:
+                    type: string
+                userId:
+                    type: string
+                propertyId:
+                    type: string
+                checkinDate:
+                    type: string
+                    format: date-time
+                checkoutDate:
+                    type: string
+                    format: date-time
+                numberOfGuests:
+                    type: integer
+                totalPrice:
+                    type: number
+                bookingStatus:
+                    type: string
 
-    Review:
-      type: object
-      properties:
-        id:
-          type: string
-        userId:
-          type: string
-        propertyId:
-          type: string
-        rating:
-          type: number
-        comment:
-          type: string
+        Review:
+            type: object
+            properties:
+                id:
+                    type: string
+                userId:
+                    type: string
+                propertyId:
+                    type: string
+                rating:
+                    type: number
+                comment:
+                    type: string
