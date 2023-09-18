@@ -1,0 +1,214 @@
+openapi: 3.0.0
+info:
+  title: Online Booking App API
+  version: 1.0.0
+  description: RESTful API for an online booking app using Express.js and Prisma
+servers:
+  - url: https://api.example.com/v1
+paths:
+  /login:
+    post:
+      summary: User Login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+        '401':
+          description: Unauthorized
+
+  /users:
+    get:
+      summary: Get all users
+      responses:
+        '200':
+          description: Successful retrieval of users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+
+  /hosts:
+    get:
+      summary: Get all hosts
+      responses:
+        '200':
+          description: Successful retrieval of hosts
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Host'
+
+  /properties:
+    get:
+      summary: Get all properties
+      responses:
+        '200':
+          description: Successful retrieval of properties
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Property'
+
+  /amenities:
+    get:
+      summary: Get all amenities
+      responses:
+        '200':
+          description: Successful retrieval of amenities
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Amenity'
+
+  /bookings:
+    get:
+      summary: Get all bookings
+      responses:
+        '200':
+          description: Successful retrieval of bookings
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Booking'
+
+  /reviews:
+    get:
+      summary: Get all reviews
+      responses:
+        '200':
+          description: Successful retrieval of reviews
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Review'
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        profilePicture:
+          type: string
+
+    Host:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        phoneNumber:
+          type: string
+        profilePicture:
+          type: string
+
+    Property:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        location:
+          type: string
+        pricePerNight:
+          type: number
+        bedroomCount:
+          type: integer
+        bathRoomCount:
+          type: integer
+        maxGuestCount:
+          type: integer
+        hostId:
+          type: string
+        rating:
+          type: number
+
+    Amenity:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+
+    Booking:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        propertyId:
+          type: string
+        checkinDate:
+          type: string
+          format: date-time
+        checkoutDate:
+          type: string
+          format: date-time
+        numberOfGuests:
+          type: integer
+        totalPrice:
+          type: number
+        bookingStatus:
+          type: string
+
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        propertyId:
+          type: string
+        rating:
+          type: number
+        comment:
+          type: string
