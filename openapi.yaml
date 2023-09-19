@@ -18,8 +18,10 @@ paths:
                             properties:
                                 username:
                                     type: string
+                                    example: johndoe
                                 password:
                                     type: string
+                                    example: mys3cur3p@ss
             responses:
                 "200":
                     description: Successful login
@@ -30,6 +32,7 @@ paths:
                                 properties:
                                     token:
                                         type: string
+                                        example: mytoken
                 "401":
                     description: Unauthorized
     /users:
@@ -423,103 +426,390 @@ paths:
                 "404":
                     description: Review not found
 components:
-    schemas:
-        User:
-            type: object
-            properties:
-                id:
-                    type: string
-                username:
-                    type: string
-                name:
-                    type: string
-                email:
-                    type: string
-                phoneNumber:
-                    type: string
-                profilePicture:
-                    type: string
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "a1234567-89ab-cdef-0123-456789abcdef"
+        username:
+          type: string
+          example: "jdoe"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "johndoe@example.com"
+        phoneNumber:
+          type: string
+          example: "123-456-7890"
+        profilePicture:
+          type: string
+          example: "https://example.com/images/johndoe.jpg"
 
-        Host:
-            type: object
-            properties:
-                id:
-                    type: string
-                username:
-                    type: string
-                name:
-                    type: string
-                email:
-                    type: string
-                phoneNumber:
-                    type: string
-                profilePicture:
-                    type: string
+    Host:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "f1234567-89ab-cdef-0123-456789abcdef"
+        username:
+          type: string
+          example: "johnDoe"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "johndoe@email.com"
+        phoneNumber:
+          type: string
+          example: "+11234567890"
+        profilePicture:
+          type: string
+          example: "https://example.com/images/johndoe.jpg"
+        aboutMe:
+          type: string
+          example: "I'm a passionate traveler who loves to share my home with fellow explorers. Welcome!"
 
-        Property:
-            type: object
-            properties:
-                id:
-                    type: string
-                title:
-                    type: string
-                description:
-                    type: string
-                location:
-                    type: string
-                pricePerNight:
-                    type: number
-                bedroomCount:
-                    type: integer
-                bathRoomCount:
-                    type: integer
-                maxGuestCount:
-                    type: integer
-                hostId:
-                    type: string
-                rating:
-                    type: number
+    Property:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "g9012345-67ef-0123-4567-89abcdef0123"
+        title:
+          type: string
+          example: "Cozy Mountain Retreat"
+        description:
+          type: string
+          example: "Experience tranquility in our cozy cabin situated on a serene mountain peak."
+        location:
+          type: string
+          example: "Rocky Mountains, Colorado"
+        pricePerNight:
+          type: number
+          example: 120.5
+        bedroomCount:
+          type: integer
+          example: 3
+        bathRoomCount:
+          type: integer
+          example: 2
+        maxGuestCount:
+          type: integer
+          example: 5
+        hostId:
+          type: string
+          example: "f1234567-89ab-cdef-0123-456789abcdef"
+        rating:
+          type: number
+          example: 5
 
-        Amenity:
-            type: object
-            properties:
-                id:
-                    type: string
-                name:
-                    type: string
+    Amenity:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "l4567890-12gh-ijkl-1234-56789abcdef0"
+        name:
+          type: string
+          example: "Wifi"
 
-        Booking:
-            type: object
-            properties:
-                id:
-                    type: string
-                userId:
-                    type: string
-                propertyId:
-                    type: string
-                checkinDate:
-                    type: string
-                    format: date-time
-                checkoutDate:
-                    type: string
-                    format: date-time
-                numberOfGuests:
-                    type: integer
-                totalPrice:
-                    type: number
-                bookingStatus:
-                    type: string
+    Booking:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "f0123456-78ab-cdef-0123-456789abcdef"
+        userId:
+          type: string
+          example: "a1234567-89ab-cdef-0123-456789abcdef"
+        propertyId:
+          type: string
+          example: "z9876543-21fe-dcba-1098-76543210dcba"
+        checkinDate:
+          type: string
+          format: date-time
+          example: "2023-03-10T18:00:00.000Z"
+        checkoutDate:
+          type: string
+          format: date-time
+          example: "2023-03-15T10:00:00.000Z"
+        numberOfGuests:
+          type: integer
+          example: 2
+        totalPrice:
+          type: number
+          example: 150.25
+        bookingStatus:
+          type: string
+          example: "confirmed"
 
-        Review:
-            type: object
-            properties:
-                id:
-                    type: string
-                userId:
-                    type: string
-                propertyId:
-                    type: string
-                rating:
-                    type: number
-                comment:
-                    type: string
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "g7890123-45cd-ef01-2345-6789abcdef01"
+        userId:
+          type: string
+          example: "a1234567-89ab-cdef-0123-456789abcdef"
+        propertyId:
+          type: string
+          example: "z0123456-78ab-cdef-9012-3456789abcdef"
+        rating:
+          type: number
+          example: 5
+        comment:
+          type: string
+          example: "The property was amazing, and the host was very accommodating!"
+    UserCreate:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "jdoe"
+        password:
+          type: string
+          example: "password123"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "johndoe@example.com"
+        phoneNumber:
+          type: string
+          example: "123-456-7890"
+        profilePicture:
+          type: string
+          example: "https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb093da7d92733c001c0_Ignacio%20Villafruela%20Rodr%C3%ADguez.jpg"
+      required:
+        - username
+        - password
+        - name
+        - email
+        - phoneNumber
+
+    UserUpdate:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "jdoe_updated"
+        name:
+          type: string
+          example: "John Doe Updated"
+        email:
+          type: string
+          example: "updatedjohndoe@example.com"
+        phoneNumber:
+          type: string
+          example: "987-654-3210"
+        profilePicture:
+          type: string
+          example: "https://updated-example.com/images/johndoe.jpg"
+
+    HostCreate:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "johnDoe"
+        password:
+          type: string
+          example: "johnDoe123"
+        name:
+          type: string
+          example: "John Doe"
+        email:
+          type: string
+          example: "johndoe@email.com"
+        phoneNumber:
+          type: string
+          example: "+11234567890"
+        profilePicture:
+          type: string
+          example: "https://example.com/images/johndoe.jpg"
+        aboutMe:
+          type: string
+          example: "I'm a passionate traveler who loves to share my home with fellow explorers. Welcome!"
+      required:
+        - username
+        - password
+        - name
+        - email
+        - phoneNumber
+
+    HostUpdate:
+      type: object
+      properties:
+        username:
+          type: string
+          example: "johnDoe_updated"
+        name:
+          type: string
+          example: "John Doe Updated"
+        email:
+          type: string
+          example: "updatedjohndoe@email.com"
+        phoneNumber:
+          type: string
+          example: "+11234567890"
+        profilePicture:
+          type: string
+          example: "https://updated-example.com/images/johndoe.jpg"
+        aboutMe:
+          type: string
+          example: "Updated bio for John Doe"
+
+    PropertyCreate:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "Cozy Mountain Retreat"
+        description:
+          type: string
+          example: "Experience tranquility in our cozy cabin situated on a serene mountain peak."
+        location:
+          type: string
+          example: "Rocky Mountains, Colorado"
+        pricePerNight:
+          type: number
+          example: 120.5
+        bedroomCount:
+          type: integer
+          example: 3
+        bathRoomCount:
+          type: integer
+          example: 2
+        maxGuestCount:
+          type: integer
+          example: 5
+        hostId:
+          type: string
+          example: "f1234567-89ab-cdef-0123-456789abcdef"
+        rating:
+          type: number
+          example: 5
+
+    PropertyUpdate:
+      type: object
+      properties:
+        title:
+          type: string
+          example: "Updated Cozy Mountain Retreat"
+        description:
+          type: string
+          example: "Updated description for the cozy mountain retreat."
+        location:
+          type: string
+          example: "Updated Location"
+        pricePerNight:
+          type: number
+          example: 150.5
+        bedroomCount:
+          type: integer
+          example: 4
+        bathRoomCount:
+          type: integer
+          example: 3
+        maxGuestCount:
+          type: integer
+          example: 6
+        rating:
+          type: number
+          example: 4.5
+
+    AmenityCreate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Wifi"
+
+    AmenityUpdate:
+      type: object
+      properties:
+        name:
+          type: string
+          example: "Updated Wifi"
+
+    ReviewCreate:
+      type: object
+      properties:
+        userId:
+          type: string
+          example: "a1234567-89ab-cdef-0123-456789abcdef"
+        propertyId:
+          type: string
+          example: "z0123456-78ab-cdef-9012-3456789abcdef"
+        rating:
+          type: number
+          example: 5
+        comment:
+          type: string
+          example: "The property was amazing, and the host was very accommodating!"
+
+    ReviewUpdate:
+      type: object
+      properties:
+        rating:
+          type: number
+          example: 4
+        comment:
+          type: string
+          example: "Updated review for the property."
+      
+    BookingCreate:
+      type: object
+      properties:
+        userId:
+          type: string
+          example: "a1234567-89ab-cdef-0123-456789abcdef"
+        propertyId:
+          type: string
+          example: "z9876543-21fe-dcba-1098-76543210dcba"
+        checkinDate:
+          type: string
+          format: date-time
+          example: "2023-03-10T18:00:00.000Z"
+        checkoutDate:
+          type: string
+          format: date-time
+          example: "2023-03-15T10:00:00.000Z"
+        numberOfGuests:
+          type: integer
+          example: 2
+        totalPrice:
+          type: number
+          example: 150.25
+        bookingStatus:
+          type: string
+          example: "confirmed"
+
+    BookingUpdate:
+      type: object
+      properties:
+        checkinDate:
+          type: string
+          format: date-time
+          example: "2023-03-11T18:00:00.000Z"
+        checkoutDate:
+          type: string
+          format: date-time
+          example: "2023-03-16T10:00:00.000Z"
+        numberOfGuests:
+          type: integer
+          example: 3
+        totalPrice:
+          type: number
+          example: 200.75
+        bookingStatus:
+          type: string
+          example: "updated"
+
