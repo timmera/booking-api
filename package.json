@@ -6,8 +6,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "test-positive": "newman run \"../postman/collections/Bookings API.json\" -e \"../postman/environments/Local.postman_environment.json\"",
-    "test-negative": "newman run \"../postman/collections/Bookings API Negative.json\" -e \"../postman/environments/Local.postman_environment.json\"",
+    "test-positive": "newman run \"./postman/collections/Bookings API.json\" -e \"./postman/environments/Bookings_api_mock.postman_environment.json\"",
+    "test-negative": "newman run \"./postman/collections/Bookings API Negative.json\" -e \"./postman/environments/Bookings_api_mock_negative.postman_environment.json\"",
     "test": "npm run test-positive && npm run test-negative"
   },
   "author": "",
@@ -21,6 +21,7 @@
     "winston": "^3.10.0"
   },
   "devDependencies": {
+    "newman": "^6.0.0",
     "nodemon": "^3.0.1"
   }
 }
