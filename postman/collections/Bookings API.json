@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "86c729c8-4405-46a4-9f80-0d4b75ad1e02",
+		"_postman_id": "2ac98a5d-12d6-4bef-8077-94a5b56941e9",
 		"name": "Bookings API",
 		"description": "RESTful API for an online booking app using Express.js and Prisma",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "17255397-86c729c8-4405-46a4-9f80-0d4b75ad1e02"
+		"_uid": "17255397-2ac98a5d-12d6-4bef-8077-94a5b56941e9"
 	},
 	"item": [
 		{
@@ -19,7 +19,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "6e0d0839-8c1b-4ec8-a104-ce97ce8ad650",
+										"id": "ba89369d-8a81-4dd2-a922-5ebaaaa1df1c",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function() {",
@@ -39,7 +39,7 @@
 									}
 								}
 							],
-							"id": "874a6f16-c6f3-4f6d-9b6b-c449d56c0e37",
+							"id": "c526350f-0ee3-4cbd-b6eb-dc77b177efee",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -71,7 +71,7 @@
 							},
 							"response": [
 								{
-									"id": "1b93174b-76e4-44dd-ad2c-325e1c3eb3f4",
+									"id": "b8fb7ba2-cd0b-4fcd-a14b-194724f6b2d1",
 									"name": "Successful retrieval of user",
 									"originalRequest": {
 										"method": "GET",
@@ -112,7 +112,7 @@
 									"body": "{\n  \"id\": \"a1234567-89ab-cdef-0123-456789abcdef\",\n  \"username\": \"jdoe\",\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"phoneNumber\": \"123-456-7890\",\n  \"profilePicture\": \"https://example.com/images/johndoe.jpg\"\n}"
 								},
 								{
-									"id": "1b5a3fbb-2d17-43d9-939c-66f396af0cdf",
+									"id": "dd48b49d-ace2-4bc0-9192-beb76c658854",
 									"name": "User not found",
 									"originalRequest": {
 										"method": "GET",
@@ -151,7 +151,21 @@
 						},
 						{
 							"name": "Update user by ID",
-							"id": "67d64267-bab5-43e8-b838-db1c9a3de5bb",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "3532740a-600f-46b4-9828-9d31a6b65c38",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "af1310e5-65e0-4de9-83d1-95f5710a8ee9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -192,7 +206,7 @@
 							},
 							"response": [
 								{
-									"id": "48b07dbf-4e6d-4a59-ba74-a9c0bd721d5f",
+									"id": "f33abd95-8b58-435e-9f11-d251136de9c4",
 									"name": "User updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -237,7 +251,7 @@
 									"body": ""
 								},
 								{
-									"id": "78fe2e30-3bcb-40cb-aa7a-cd72dcc159b1",
+									"id": "272e9105-be2d-4f13-8838-743b68c722e3",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -282,7 +296,7 @@
 									"body": ""
 								},
 								{
-									"id": "0782dc1f-3241-4e79-b670-1b67ba27ad22",
+									"id": "b9eb0f10-a5ba-4f59-afa4-90cb42695a16",
 									"name": "User not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -330,7 +344,21 @@
 						},
 						{
 							"name": "Delete user by ID",
-							"id": "e054fd07-0a8e-4690-a31e-b36513648cf2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cb225fee-834a-40a6-8a15-e687cd6d292b",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8dae4dc0-3ae6-44d9-b3fc-3875baef0bb8",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -357,7 +385,7 @@
 							},
 							"response": [
 								{
-									"id": "b4908e13-43aa-424d-b586-1f3aa8865109",
+									"id": "a7860b6f-0cd7-471e-a489-763bfed1c8ec",
 									"name": "User deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -380,8 +408,8 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "text",
 									"header": [
 										{
@@ -393,7 +421,7 @@
 									"body": ""
 								},
 								{
-									"id": "4268ba1d-2f21-413b-95ae-e9c1ac884f0d",
+									"id": "e6889096-3435-4914-8e4f-65c4ae2cec63",
 									"name": "User not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -431,7 +459,7 @@
 							]
 						}
 					],
-					"id": "c8c097b8-358b-4996-a8aa-a556df9dee9c"
+					"id": "abe38b42-b9c7-47bd-bc49-89d315821900"
 				},
 				{
 					"name": "Get all users",
@@ -439,7 +467,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "6829d4a3-7b66-41d6-9e69-169bb8cee7d9",
+								"id": "b2096e57-adec-44ad-acd8-14f892e01645",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -457,7 +485,7 @@
 							}
 						}
 					],
-					"id": "73ae558e-b932-4c75-a27a-a3994c1d2d0f",
+					"id": "fb7e46ca-e72e-4ea2-8b64-3abe0d30eba4",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -481,7 +509,7 @@
 					},
 					"response": [
 						{
-							"id": "c1c1093f-e00a-4ded-a8fc-b3891efed0dc",
+							"id": "73495c86-6b94-49f9-b5e1-8d4bf2e3bec9",
 							"name": "Successful retrieval of users",
 							"originalRequest": {
 								"method": "GET",
@@ -517,7 +545,21 @@
 				},
 				{
 					"name": "Create a new user",
-					"id": "3cc4fdcd-ea60-4ee0-855f-a5ee875245a3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a2b40b86-7cc4-445f-8f25-4296928bb42c",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "0bc2ba00-d5d1-436a-8624-c1c92eafc552",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -550,7 +592,7 @@
 					},
 					"response": [
 						{
-							"id": "6afbc293-38ff-448d-88df-ab6f962ba1f4",
+							"id": "9b43e644-fec5-4059-a82d-9690c8ff089f",
 							"name": "User created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -585,48 +627,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "3c4c768c-9b9c-4188-ac9e-7063c1f0c308",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"username\": \"jdoe\",\n  \"password\": \"password123\",\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@example.com\",\n  \"phoneNumber\": \"123-456-7890\",\n  \"profilePicture\": \"https://global-uploads.webflow.com/5eecfecbe625d195e35b89f2/624bfb093da7d92733c001c0_Ignacio%20Villafruela%20Rodr%C3%ADguez.jpg\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/users",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "1314a41b-421c-4c0b-bd5a-b65889122efb"
+			"id": "7276997f-b360-47ef-8571-834ae7a15a92"
 		},
 		{
 			"name": "hosts",
@@ -640,7 +645,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "999bc4d2-8ac1-496f-9ae4-8109c4f392ad",
+										"id": "cc7f4d1b-c384-431b-99ac-359635bef522",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function () {",
@@ -660,7 +665,7 @@
 									}
 								}
 							],
-							"id": "0ea8bd72-14a3-4b19-b624-67f3cfa1451d",
+							"id": "6972ae38-53d6-4f75-afd5-e7a1d139d3ec",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -692,7 +697,7 @@
 							},
 							"response": [
 								{
-									"id": "08d52994-7096-4f8e-be4c-2be3fb117c7a",
+									"id": "b5db410d-3a7e-4577-9814-82e5e5bce491",
 									"name": "Successful retrieval of host",
 									"originalRequest": {
 										"method": "GET",
@@ -733,7 +738,7 @@
 									"body": "{\n  \"id\": \"f1234567-89ab-cdef-0123-456789abcdef\",\n  \"username\": \"johnDoe\",\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@email.com\",\n  \"phoneNumber\": \"+11234567890\",\n  \"profilePicture\": \"https://example.com/images/johndoe.jpg\",\n  \"aboutMe\": \"I'm a passionate traveler who loves to share my home with fellow explorers. Welcome!\"\n}"
 								},
 								{
-									"id": "6dfead31-b1cb-478e-b3a8-323f0a436e2d",
+									"id": "372b4912-09ef-4728-b69f-0593c408f3ed",
 									"name": "Host not found",
 									"originalRequest": {
 										"method": "GET",
@@ -772,7 +777,21 @@
 						},
 						{
 							"name": "Update host by ID",
-							"id": "869cb65d-5c08-4f67-b8e3-dd45d48fcfa5",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "bbed6f2a-f8af-4833-aef2-45d0fa7cab58",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "fa86ffe8-4e91-439b-a5e3-1d7130c79a6d",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -813,7 +832,7 @@
 							},
 							"response": [
 								{
-									"id": "e78fc468-e8b7-4e89-8ca9-e49909fdce0c",
+									"id": "1e234916-55c4-44a1-9d42-4f45c653454f",
 									"name": "Host updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -858,7 +877,7 @@
 									"body": ""
 								},
 								{
-									"id": "7a3d565e-4232-4a0a-973d-24179b5aab3a",
+									"id": "19f1e878-be23-4478-832f-84460976dda6",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -903,7 +922,7 @@
 									"body": ""
 								},
 								{
-									"id": "7aa53d4a-37e3-4691-8eca-b080fac16f40",
+									"id": "252957ba-8ced-4833-bd5b-6b357abd6e2a",
 									"name": "Host not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -951,7 +970,21 @@
 						},
 						{
 							"name": "Delete host by ID",
-							"id": "590095a5-4936-458a-a65a-c4f1f3e57004",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "48bbf05e-e16b-4012-ad6c-c88117041a37",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "381e0e1d-f11b-4bee-a7c2-cbd6133730c7",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -978,7 +1011,7 @@
 							},
 							"response": [
 								{
-									"id": "86cb9daa-aadc-494a-ba47-6838fc837d55",
+									"id": "62dae38d-3646-40d3-bce0-ba6cc06ab0d4",
 									"name": "Host deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -1001,8 +1034,8 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "text",
 									"header": [
 										{
@@ -1014,7 +1047,7 @@
 									"body": ""
 								},
 								{
-									"id": "62d828f0-10c3-4804-84a5-ac69d20d5b0e",
+									"id": "642277c6-e45e-4a7a-8e86-1f571f47d221",
 									"name": "Host not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -1052,7 +1085,7 @@
 							]
 						}
 					],
-					"id": "fc66e638-3758-423a-a7d5-d2cb8fbeedd3"
+					"id": "c0f7fd24-2b84-4a5d-936f-ba7d139ff590"
 				},
 				{
 					"name": "Get all hosts",
@@ -1060,7 +1093,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "bdef763b-22b8-41e9-b16e-bde375c7c14a",
+								"id": "1131ab48-9c1a-4a7a-a1d5-71919ea4d2f5",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -1077,7 +1110,7 @@
 							}
 						}
 					],
-					"id": "497dc443-ac46-45a4-9938-1d481df7db4e",
+					"id": "b8e07f4c-d3e0-4de3-b9f0-e2cd817e0068",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1101,7 +1134,7 @@
 					},
 					"response": [
 						{
-							"id": "7e0492f6-06a7-499b-b1c4-9924b1336dc4",
+							"id": "65599ed5-d7d1-448b-a6b0-036b48abfcec",
 							"name": "Successful retrieval of hosts",
 							"originalRequest": {
 								"method": "GET",
@@ -1137,7 +1170,21 @@
 				},
 				{
 					"name": "Create a new host",
-					"id": "8472cf2e-b615-4d83-8ca7-b435b8715ba1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc80d5fd-8774-4677-895f-9cc0c694126d",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9deed9bc-99f1-41da-b017-51c6b2698478",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1170,7 +1217,7 @@
 					},
 					"response": [
 						{
-							"id": "d843b97c-ca88-4737-bf67-a0a62f5468c0",
+							"id": "cdbb2dad-2094-4632-ac97-478bc490709c",
 							"name": "Host created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -1205,48 +1252,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "955d362a-dec8-41b2-b28b-e077b2cdd62c",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"username\": \"johnDoe\",\n  \"password\": \"johnDoe123\",\n  \"name\": \"John Doe\",\n  \"email\": \"johndoe@email.com\",\n  \"phoneNumber\": \"+11234567890\",\n  \"profilePicture\": \"https://example.com/images/johndoe.jpg\",\n  \"aboutMe\": \"I'm a passionate traveler who loves to share my home with fellow explorers. Welcome!\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/hosts",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"hosts"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "cc164486-f538-479c-b735-0981aafc5559"
+			"id": "87132fd1-f868-4712-9641-0410d9b3b01c"
 		},
 		{
 			"name": "properties",
@@ -1260,7 +1270,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "565f53de-b741-4d2c-a499-9e2de2a5d2ac",
+										"id": "54ab2f8f-0401-45c8-918f-2d6c31ca2c61",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function () {",
@@ -1288,7 +1298,7 @@
 									}
 								}
 							],
-							"id": "63ec15ef-ecb8-45da-84c5-93f3c4ba8476",
+							"id": "ba81bce4-e45f-495f-94fa-48b454ff6cb6",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1320,7 +1330,7 @@
 							},
 							"response": [
 								{
-									"id": "f850b55e-d857-4faa-a80e-666a27d18b09",
+									"id": "7e5c5f85-2e06-4141-919e-61a238ac8600",
 									"name": "Successful retrieval of property",
 									"originalRequest": {
 										"method": "GET",
@@ -1361,7 +1371,7 @@
 									"body": "{\n  \"id\": \"g9012345-67ef-0123-4567-89abcdef0123\",\n  \"title\": \"Cozy Mountain Retreat\",\n  \"description\": \"Experience tranquility in our cozy cabin situated on a serene mountain peak.\",\n  \"location\": \"Rocky Mountains, Colorado\",\n  \"pricePerNight\": 120.5,\n  \"bedroomCount\": 3,\n  \"bathRoomCount\": 2,\n  \"maxGuestCount\": 5,\n  \"hostId\": \"f1234567-89ab-cdef-0123-456789abcdef\",\n  \"rating\": 5\n}"
 								},
 								{
-									"id": "7f5cdf27-76e3-42d1-be1a-80991719a9fd",
+									"id": "5e5f2dec-6a0b-421e-9607-a4d6e246771b",
 									"name": "Property not found",
 									"originalRequest": {
 										"method": "GET",
@@ -1400,7 +1410,21 @@
 						},
 						{
 							"name": "Update property by ID",
-							"id": "056f1d22-581d-4cab-88e4-d607e07db6b3",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fcec18dc-e1f3-4606-9dc6-c4aedf676c46",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "bb5cc6c2-3a62-4864-93f1-90c2628fb77b",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1441,7 +1465,7 @@
 							},
 							"response": [
 								{
-									"id": "48c4aafa-dc4f-413c-9882-aca5df1a6a16",
+									"id": "9e5e123c-6f17-43be-83de-3d2063d34eca",
 									"name": "Property updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -1486,7 +1510,7 @@
 									"body": ""
 								},
 								{
-									"id": "276a73eb-f2ae-4a74-8f4e-2a6dd87b7654",
+									"id": "83314e2a-5bd9-4a3a-998c-25214170e89d",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -1531,7 +1555,7 @@
 									"body": ""
 								},
 								{
-									"id": "56031d50-f7d8-4865-92f8-291695f224cd",
+									"id": "858212dd-6b22-4bbf-8f3a-6b5ba443d9ec",
 									"name": "Property not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -1579,7 +1603,21 @@
 						},
 						{
 							"name": "Delete property by ID",
-							"id": "a58a0bde-ba09-4201-a451-55f9f73fe352",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "85df5526-764e-4b85-a83b-6c5a350b65d0",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "db6086ad-77aa-42a9-85e5-8927d40577da",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1606,7 +1644,7 @@
 							},
 							"response": [
 								{
-									"id": "575e1520-2f56-4a7d-b250-87fbd84e2316",
+									"id": "b5324c42-0110-41da-a1ec-6cbd4b5c026d",
 									"name": "Property deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -1642,7 +1680,7 @@
 									"body": ""
 								},
 								{
-									"id": "4efa119b-9f35-4b6e-9f28-80401d71d6f7",
+									"id": "0cbb2f0b-19f3-4a97-9a5a-6c087f55bb34",
 									"name": "Property not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -1680,7 +1718,7 @@
 							]
 						}
 					],
-					"id": "6f179e84-d519-4acc-a3fd-36c231670046"
+					"id": "f2e0336d-13a5-435c-891b-fa55360fc2c6"
 				},
 				{
 					"name": "Get all properties",
@@ -1688,7 +1726,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "dc9f34d7-cd64-4b43-8327-ca60c44005a2",
+								"id": "168281a2-5d01-436d-bdfc-7d606a30dff8",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -1731,7 +1769,7 @@
 							}
 						}
 					],
-					"id": "17681989-519a-4dfe-b1d2-6bd1fde455a7",
+					"id": "33d9d93e-8137-4162-8c57-1fb3add80f91",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1755,7 +1793,7 @@
 					},
 					"response": [
 						{
-							"id": "dc9835b3-9288-4170-aebb-81cf23b99414",
+							"id": "827b253c-5b45-47b2-a7eb-08790ad84588",
 							"name": "Successful retrieval of properties",
 							"originalRequest": {
 								"method": "GET",
@@ -1791,7 +1829,21 @@
 				},
 				{
 					"name": "Create a new property",
-					"id": "b1e4db10-032c-47a7-ac34-b1e4b511bd61",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1ed90801-cf91-4a76-993b-17d3cafa0135",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "16f77ade-3d30-42e2-8449-07ff2aea31c5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1824,7 +1876,7 @@
 					},
 					"response": [
 						{
-							"id": "bc09b6ae-0e5b-4dcb-8cc0-01ac2df34987",
+							"id": "575f33f1-ac85-4c2f-94b6-958232815c3d",
 							"name": "Property created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -1859,48 +1911,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "3efad47d-f4f7-43b3-99c4-1b85084a75e5",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"title\": \"Cozy Mountain Retreat\",\n  \"description\": \"Experience tranquility in our cozy cabin situated on a serene mountain peak.\",\n  \"location\": \"Rocky Mountains, Colorado\",\n  \"pricePerNight\": 120.5,\n  \"bedroomCount\": 3,\n  \"bathRoomCount\": 2,\n  \"maxGuestCount\": 5,\n  \"hostId\": \"f1234567-89ab-cdef-0123-456789abcdef\",\n  \"rating\": 5\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/properties",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"properties"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "4975e3e7-a2bf-4ce5-afcb-0b4e51627b1b"
+			"id": "100222e9-9c32-4bba-964d-9bfc9dbf3cd9"
 		},
 		{
 			"name": "amenities",
@@ -1914,7 +1929,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "69f08752-06aa-461c-bc64-5544689b95f9",
+										"id": "c7ee129b-7a88-4b2a-8e35-7560b364d8b0",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function () {",
@@ -1950,7 +1965,7 @@
 									}
 								}
 							],
-							"id": "dbc5b2d9-8e2e-40d0-883a-79d12657749b",
+							"id": "327ca05e-bff2-4d8a-a25c-b1630cbb2f85",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -1982,7 +1997,7 @@
 							},
 							"response": [
 								{
-									"id": "175210f8-b036-465e-a172-86ba0841ecb4",
+									"id": "802320f9-b7f5-42e8-9ae0-b4f7f45aabd5",
 									"name": "Successful retrieval of amenity",
 									"originalRequest": {
 										"method": "GET",
@@ -2023,7 +2038,7 @@
 									"body": "{\n  \"id\": \"l4567890-12gh-ijkl-1234-56789abcdef0\",\n  \"name\": \"Wifi\"\n}"
 								},
 								{
-									"id": "874641ad-02f2-4d18-985e-bcd4f054d97f",
+									"id": "46c8f4b5-cee3-49b6-808a-7586283b7035",
 									"name": "Amenity not found",
 									"originalRequest": {
 										"method": "GET",
@@ -2062,7 +2077,21 @@
 						},
 						{
 							"name": "Update amenity by ID",
-							"id": "138d668c-d039-41fb-8581-29cb90da696e",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "341958f2-23d8-43b8-9433-8da5663896a3",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "aafc660a-75a4-401f-bbe3-7eac639e284c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2103,7 +2132,7 @@
 							},
 							"response": [
 								{
-									"id": "99c65c87-8c64-427a-a03d-361b9e347536",
+									"id": "7a9d9576-9fc7-4d6f-8b79-a4cd7dbd5d6a",
 									"name": "Amenity updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -2148,7 +2177,7 @@
 									"body": ""
 								},
 								{
-									"id": "1b41d1a7-ca5b-456a-a818-0e70964cb657",
+									"id": "51904465-d8b7-43c9-a822-196a0948d8b1",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -2193,7 +2222,7 @@
 									"body": ""
 								},
 								{
-									"id": "d9c693a3-6dc9-48aa-b565-a66bcd5272e8",
+									"id": "57bc8b19-7039-4ccb-bb25-d088d2d7ebc8",
 									"name": "Amenity not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -2241,7 +2270,21 @@
 						},
 						{
 							"name": "Delete amenity by ID",
-							"id": "9a295228-1e51-42be-a61b-4057cb4fd634",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "cf5e1004-70ef-4e33-8c88-2b937e0e4d21",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8860f491-a718-41ab-89c4-f5c4754986cf",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2268,7 +2311,7 @@
 							},
 							"response": [
 								{
-									"id": "4fbf830d-d9ca-4717-b3d1-059571a68a90",
+									"id": "9ce7418e-9c83-49d2-ac0f-5f7198327756",
 									"name": "Amenity deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -2291,8 +2334,8 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "text",
 									"header": [
 										{
@@ -2304,7 +2347,7 @@
 									"body": ""
 								},
 								{
-									"id": "f48b4c54-bffd-4a00-9134-64321af1e76f",
+									"id": "ebdc0111-13b9-46f9-980b-82be849bbb5c",
 									"name": "Amenity not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -2342,7 +2385,7 @@
 							]
 						}
 					],
-					"id": "a2c8dbea-fc11-43ad-9b86-9bc5b4b9378b"
+					"id": "be8a1d81-3fe9-4778-8a1f-4c897dae4aa0"
 				},
 				{
 					"name": "Get all amenities",
@@ -2350,7 +2393,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "3b7fe576-7c50-4961-bcda-de9a5704936d",
+								"id": "3bf52c13-9aee-43f8-818f-8967581ca214",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -2405,7 +2448,7 @@
 							}
 						}
 					],
-					"id": "cd8e5c42-c4db-4c85-9aff-84eb6709a0f3",
+					"id": "d36e1f81-6668-4011-b075-88758e0240ad",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2429,7 +2472,7 @@
 					},
 					"response": [
 						{
-							"id": "a1f57741-ba53-4c79-9003-0d2f0e6b1bad",
+							"id": "ab7b22ae-c719-4a5e-a061-a9fc07ab464c",
 							"name": "Successful retrieval of amenities",
 							"originalRequest": {
 								"method": "GET",
@@ -2465,7 +2508,21 @@
 				},
 				{
 					"name": "Create a new amenity",
-					"id": "0ec9ce54-c76b-4fbc-b753-1c7afc002472",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f11f88c2-a9b8-465b-bc62-e0bc2c8027ca",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "c96a497d-838c-4993-b371-14532bacdeac",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -2498,7 +2555,7 @@
 					},
 					"response": [
 						{
-							"id": "0aa8ee6b-9d32-4ad9-975b-365bad223c66",
+							"id": "42713883-af91-48f1-911b-74ad24d1a1f9",
 							"name": "Amenity created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -2533,48 +2590,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "eb2c7de0-b85c-4df8-88b7-ff4b4b736ce5",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"name\": \"Wifi\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/amenities",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"amenities"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "1792275b-4bfb-482c-9be9-e03c2b2c4bce"
+			"id": "9bb78ad5-a33d-4a3c-bef0-b8d3a6ce371a"
 		},
 		{
 			"name": "bookings",
@@ -2588,7 +2608,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "01f2b91c-5802-4ad4-8227-e737e40b818a",
+										"id": "aa1d70a8-dea4-4f1d-893f-64aaecc05fc0",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function () {",
@@ -2622,7 +2642,7 @@
 									}
 								}
 							],
-							"id": "766a8ef2-8e58-4000-afad-f020e647c0af",
+							"id": "6a473867-dee8-43a5-87d6-58e56079e44c",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2654,7 +2674,7 @@
 							},
 							"response": [
 								{
-									"id": "5e029270-b3be-4b71-9282-c141f8b2f01a",
+									"id": "5c545a0f-5f19-4b26-a5ad-71c7652ba89f",
 									"name": "Successful retrieval of booking",
 									"originalRequest": {
 										"method": "GET",
@@ -2695,7 +2715,7 @@
 									"body": "{\n  \"id\": \"f0123456-78ab-cdef-0123-456789abcdef\",\n  \"userId\": \"a1234567-89ab-cdef-0123-456789abcdef\",\n  \"propertyId\": \"z9876543-21fe-dcba-1098-76543210dcba\",\n  \"checkinDate\": \"2023-03-10T18:00:00.000Z\",\n  \"checkoutDate\": \"2023-03-15T10:00:00.000Z\",\n  \"numberOfGuests\": 2,\n  \"totalPrice\": 150.25,\n  \"bookingStatus\": \"confirmed\"\n}"
 								},
 								{
-									"id": "0a149e52-fdde-46e9-95bc-ac4a5efa9d7e",
+									"id": "c8a42270-b880-48b8-ba31-2b43685eba5b",
 									"name": "Booking not found",
 									"originalRequest": {
 										"method": "GET",
@@ -2734,7 +2754,21 @@
 						},
 						{
 							"name": "Update booking by ID",
-							"id": "51318020-8306-4ff2-9cc1-fc0a3ab8209b",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "2c7109f9-1190-4d9f-ab18-1bfff9c1a81a",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "adae7130-6027-49a9-a2e4-9e331873dcb1",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2775,7 +2809,7 @@
 							},
 							"response": [
 								{
-									"id": "c7a106ce-7cd7-4e48-b50a-3b933edf6905",
+									"id": "6a29586d-7c81-43d3-a996-39c59941365d",
 									"name": "Booking updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -2820,7 +2854,7 @@
 									"body": ""
 								},
 								{
-									"id": "0962a836-389d-4a9f-aaa7-40b91c0a4f9b",
+									"id": "561ce292-14ab-467d-b4d2-d5bc6d39a056",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -2865,7 +2899,7 @@
 									"body": ""
 								},
 								{
-									"id": "02362b0c-46f7-4d59-9660-4e7db0a6a5b4",
+									"id": "5e5f351b-0a58-47d1-b4ce-afb72feb8ca2",
 									"name": "Booking not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -2913,7 +2947,21 @@
 						},
 						{
 							"name": "Delete booking by ID",
-							"id": "95da96a3-787b-4001-8633-0096031eac58",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fbda1f2f-3433-49a6-8270-902f084ba263",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "8aa6a27d-f606-4ae6-bc9b-13038ea62424",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -2940,7 +2988,7 @@
 							},
 							"response": [
 								{
-									"id": "9e932c3d-727b-4dce-bcbb-e6847d16491f",
+									"id": "a8748843-68ee-45f2-8ff0-2f943afe79c5",
 									"name": "Booking deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -2963,8 +3011,8 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "text",
 									"header": [
 										{
@@ -2976,7 +3024,7 @@
 									"body": ""
 								},
 								{
-									"id": "da3636a4-b35a-4981-8da5-9bbcba45ee67",
+									"id": "5123ad0d-12d7-41df-a4c2-59aa734491cd",
 									"name": "Booking not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -3014,7 +3062,7 @@
 							]
 						}
 					],
-					"id": "68178076-cf87-4e02-aef2-8a15b209a9c6"
+					"id": "f9f28acd-487c-4f25-8b03-3df552cf5247"
 				},
 				{
 					"name": "Get all bookings",
@@ -3022,7 +3070,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "04601b5e-a425-4c73-8d13-6db0a8e9e386",
+								"id": "5063f3d4-688f-444b-83ba-214a299be9d0",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -3061,7 +3109,7 @@
 							}
 						}
 					],
-					"id": "3f9b8ac4-2090-43e1-b9d4-b2f21220bca0",
+					"id": "50fbcf60-eddc-4427-8a4f-9916dbd1ad9d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3085,7 +3133,7 @@
 					},
 					"response": [
 						{
-							"id": "06257d13-3a26-4449-882b-1f7655ddc48c",
+							"id": "e0fb97ef-98db-4ce8-b2ff-10ec8a2b5ebe",
 							"name": "Successful retrieval of bookings",
 							"originalRequest": {
 								"method": "GET",
@@ -3121,7 +3169,21 @@
 				},
 				{
 					"name": "Create a new booking",
-					"id": "d56635e3-7019-4be3-80b6-81a0b71cca92",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1f084f3f-f50c-4c7b-a64e-82f7b99893b0",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4a3b1815-fc50-4fc8-b42f-2f3c5b03f34b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3154,7 +3216,7 @@
 					},
 					"response": [
 						{
-							"id": "4ee8c6ad-da67-465e-93bf-295f690972ec",
+							"id": "2a49b4af-c5b1-4afd-8ec4-3d4a7da0d4d4",
 							"name": "Booking created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -3189,48 +3251,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "48b82d7c-3185-43b0-bafd-a6b126cf7644",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"userId\": \"a1234567-89ab-cdef-0123-456789abcdef\",\n  \"propertyId\": \"z9876543-21fe-dcba-1098-76543210dcba\",\n  \"checkinDate\": \"2023-03-10T18:00:00.000Z\",\n  \"checkoutDate\": \"2023-03-15T10:00:00.000Z\",\n  \"numberOfGuests\": 2,\n  \"totalPrice\": 150.25,\n  \"bookingStatus\": \"confirmed\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/bookings",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"bookings"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "41b1ec7e-0d62-4508-92bd-669a96f2fc29"
+			"id": "96bfd29a-6586-4289-ac01-bb6bc8852834"
 		},
 		{
 			"name": "reviews",
@@ -3244,7 +3269,7 @@
 								{
 									"listen": "test",
 									"script": {
-										"id": "0d5cfccf-5df7-4c6e-bae2-c9854c50b975",
+										"id": "fe92f9f7-2542-46b0-ae0b-f74a9e3bc91c",
 										"exec": [
 											"",
 											"pm.test(\"Response status code is 200\", function () {",
@@ -3290,7 +3315,7 @@
 									}
 								}
 							],
-							"id": "2e9b6853-6592-479f-800b-9725b745f260",
+							"id": "d94af9a8-426e-46e3-ac30-2f551bd2aaa9",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3322,7 +3347,7 @@
 							},
 							"response": [
 								{
-									"id": "11cab5bc-4da7-40ec-8ec1-169113d25cfd",
+									"id": "17f7ac46-6359-4d6f-8bea-93b8002e4f48",
 									"name": "Successful retrieval of review",
 									"originalRequest": {
 										"method": "GET",
@@ -3363,7 +3388,7 @@
 									"body": "{\n  \"id\": \"g7890123-45cd-ef01-2345-6789abcdef01\",\n  \"userId\": \"a1234567-89ab-cdef-0123-456789abcdef\",\n  \"propertyId\": \"z0123456-78ab-cdef-9012-3456789abcdef\",\n  \"rating\": 5,\n  \"comment\": \"The property was amazing, and the host was very accommodating!\"\n}"
 								},
 								{
-									"id": "12c0d436-1533-49e4-b858-7e1970047b71",
+									"id": "9614eb95-2813-455c-8f76-a6a5a3d7a36f",
 									"name": "Review not found",
 									"originalRequest": {
 										"method": "GET",
@@ -3402,7 +3427,21 @@
 						},
 						{
 							"name": "Update review by ID",
-							"id": "89933c8a-c78e-4d45-bf10-b554a0d0ebff",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "fe3e37a8-83de-4196-aca7-8ac0031aab65",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "3c709ca2-ff1a-40c2-a0e6-9160d02b6a47",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3443,7 +3482,7 @@
 							},
 							"response": [
 								{
-									"id": "e63b501c-d075-430d-872b-03b9155c9545",
+									"id": "63fa412c-3bea-40e6-9704-b5c9b29d9e0a",
 									"name": "Review updated successfully",
 									"originalRequest": {
 										"method": "PUT",
@@ -3488,7 +3527,7 @@
 									"body": ""
 								},
 								{
-									"id": "95f23daa-533d-4542-ab79-b5094fdb1b11",
+									"id": "9e026223-0bed-4bfb-b4de-59d4baf9d878",
 									"name": "Bad request",
 									"originalRequest": {
 										"method": "PUT",
@@ -3533,7 +3572,7 @@
 									"body": ""
 								},
 								{
-									"id": "59580eb9-aa56-49e4-9929-ba2f28721535",
+									"id": "aeb9eb65-edd7-4421-b2ec-fe927c57029a",
 									"name": "Review not found",
 									"originalRequest": {
 										"method": "PUT",
@@ -3581,7 +3620,21 @@
 						},
 						{
 							"name": "Delete review by ID",
-							"id": "85b88269-6006-4cea-b43c-cfb6a9a2f191",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "c734b1cc-057f-48a2-bb9e-1c4507e9dbce",
+										"exec": [
+											"pm.test(\"Response status code is 200\", function() {",
+											"    pm.response.to.have.status(200);",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"id": "af2d6b5d-3b40-4a0f-b3c4-bf57de8f25bc",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -3608,7 +3661,7 @@
 							},
 							"response": [
 								{
-									"id": "4d2c4654-b5ad-4d48-b082-d1621c189e3e",
+									"id": "418dd70e-8f2f-4c21-823e-099e107c8f03",
 									"name": "Review deleted successfully",
 									"originalRequest": {
 										"method": "DELETE",
@@ -3631,8 +3684,8 @@
 											]
 										}
 									},
-									"status": "No Content",
-									"code": 204,
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "text",
 									"header": [
 										{
@@ -3644,7 +3697,7 @@
 									"body": ""
 								},
 								{
-									"id": "6718d80e-632d-43ca-9a32-8e7939d6b50e",
+									"id": "c0d59391-31ce-4823-b3f1-7f14fb7b6957",
 									"name": "Review not found",
 									"originalRequest": {
 										"method": "DELETE",
@@ -3682,7 +3735,7 @@
 							]
 						}
 					],
-					"id": "9be64a33-5069-4b20-ac18-f5d444c4fa03"
+					"id": "12280a1e-bf57-4af2-a684-bba8609b076c"
 				},
 				{
 					"name": "Get all reviews",
@@ -3690,7 +3743,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "abea5889-3599-4b2f-a001-656c20c8a5b3",
+								"id": "7c4ce609-c9ec-4311-b94b-64d57fcfe023",
 								"exec": [
 									"",
 									"pm.test(\"Response status code is 200\", function () {",
@@ -3742,7 +3795,7 @@
 							}
 						}
 					],
-					"id": "1165e2f8-18a2-49b1-94f6-f6ca49411c77",
+					"id": "6d9ae07c-6cd4-404e-808a-f655b271e9d5",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3766,7 +3819,7 @@
 					},
 					"response": [
 						{
-							"id": "080d4660-22d5-446a-b663-1aa9fc250a1b",
+							"id": "15798049-e9fb-4085-89f9-aac4f6fbe87e",
 							"name": "Successful retrieval of reviews",
 							"originalRequest": {
 								"method": "GET",
@@ -3802,7 +3855,21 @@
 				},
 				{
 					"name": "Create a new review",
-					"id": "f5af84e4-4310-4c28-82a7-1cf2ae6fff78",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7bec8fc4-8fde-45d5-94b1-a9973fe99aa0",
+								"exec": [
+									"pm.test(\"Response status code is 201\", function() {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "23128166-a5ba-472a-8ade-c88e02d5552b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -3835,7 +3902,7 @@
 					},
 					"response": [
 						{
-							"id": "f1364ef1-6a72-4de6-9ff5-26ab66daebfe",
+							"id": "844b5729-4a7b-4e56-af71-7e2bcfaa7812",
 							"name": "Review created successfully",
 							"originalRequest": {
 								"method": "POST",
@@ -3870,48 +3937,11 @@
 							],
 							"cookie": [],
 							"body": ""
-						},
-						{
-							"id": "844cf878-0f11-42b1-ae0b-bce56c9a0f78",
-							"name": "Bad request",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"userId\": \"a1234567-89ab-cdef-0123-456789abcdef\",\n  \"propertyId\": \"z0123456-78ab-cdef-9012-3456789abcdef\",\n  \"rating\": 5,\n  \"comment\": \"The property was amazing, and the host was very accommodating!\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/reviews",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"reviews"
-									]
-								}
-							},
-							"status": "Bad Request",
-							"code": 400,
-							"_postman_previewlanguage": "text",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "text/plain"
-								}
-							],
-							"cookie": [],
-							"body": ""
 						}
 					]
 				}
 			],
-			"id": "2f84b4ed-cde4-472c-9d3d-7553dbfd682c"
+			"id": "85363f17-c062-4151-a921-fdea3f1bef1e"
 		},
 		{
 			"name": "User Login",
@@ -3919,7 +3949,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "9ddcfb83-92b2-42f1-843e-3884371b1da5",
+						"id": "bf097e0a-4b08-461a-9da5-80ba21f6aa50",
 						"exec": [
 							"",
 							"pm.test(\"Response status code is 200\", function () {",
@@ -3948,7 +3978,7 @@
 					}
 				}
 			],
-			"id": "ec3ecfa5-ad11-4364-847a-ff981d0eed5d",
+			"id": "5e7bac6f-f1b4-48f4-9dc2-05e22d1b0e08",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -3985,7 +4015,7 @@
 			},
 			"response": [
 				{
-					"id": "28f6940e-89f4-436f-ab78-639353969094",
+					"id": "5ca560b1-530f-4feb-a36e-62b06a726ee9",
 					"name": "Successful login",
 					"originalRequest": {
 						"method": "POST",
@@ -4027,7 +4057,7 @@
 					"body": "{\n  \"token\": \"mytoken\"\n}"
 				},
 				{
-					"id": "4ad14eea-d1b6-41a7-bb68-4e2fb4074a99",
+					"id": "ae2b9291-25bf-43a5-b938-994b09cd8691",
 					"name": "Unauthorized",
 					"originalRequest": {
 						"method": "POST",
@@ -4068,7 +4098,7 @@
 	],
 	"variable": [
 		{
-			"id": "3759a584-4648-42d4-8d79-2f7374d5ba71",
+			"id": "f9bae75a-9571-4b07-981f-284d553a8107",
 			"key": "baseUrl",
 			"value": "https://api.example.com/v1",
 			"type": "string"

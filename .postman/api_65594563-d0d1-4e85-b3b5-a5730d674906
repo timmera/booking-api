@@ -10,7 +10,7 @@ id = 65594563-d0d1-4e85-b3b5-a5730d674906
 [config.relations.collections]
 rootDirectory = postman/collections
 files[] = {"id":"17255397-7f85def4-0895-4259-845f-846027b1d848","path":"Bookings API Negative.json","metaData":{}}
-files[] = {"id":"17255397-86c729c8-4405-46a4-9f80-0d4b75ad1e02","path":"Bookings API.json","metaData":{}}
+files[] = {"id":"17255397-2ac98a5d-12d6-4bef-8077-94a5b56941e9","path":"Bookings API.json","metaData":{}}
 
 [config.relations.collections.metaData]
 

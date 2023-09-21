@@ -96,7 +96,7 @@ paths:
         delete:
             summary: Delete user by ID
             responses:
-                "204":
+                "200":
                     description: User deleted successfully
                 "404":
                     description: User not found
@@ -161,7 +161,7 @@ paths:
         delete:
             summary: Delete host by ID
             responses:
-                "204":
+                "200":
                     description: Host deleted successfully
                 "404":
                     description: Host not found
@@ -291,7 +291,7 @@ paths:
         delete:
             summary: Delete amenity by ID
             responses:
-                "204":
+                "200":
                     description: Amenity deleted successfully
                 "404":
                     description: Amenity not found
@@ -356,7 +356,7 @@ paths:
         delete:
             summary: Delete booking by ID
             responses:
-                "204":
+                "200":
                     description: Booking deleted successfully
                 "404":
                     description: Booking not found
@@ -421,7 +421,7 @@ paths:
         delete:
             summary: Delete review by ID
             responses:
-                "204":
+                "200":
                     description: Review deleted successfully
                 "404":
                     description: Review not found
