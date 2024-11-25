@@ -14,23 +14,23 @@ datasource db {
 }
 
 model User {
-  id          String  @id @default(uuid())
-  username    String  @unique
-  password    String
-  name        String
-  email       String
-  phoneNumber String
-  pictureUrl  String
-  bookings    Booking[]
-  reviews      Review[]
+  id              String  @id @default(uuid())
+  username        String  @unique
+  password        String
+  name            String
+  email           String
+  phoneNumber     String
+  profilePicture  String
+  bookings        Booking[]
+reviews           Review[]
 }
 
 model Booking {
   id             String @id @default(uuid())
   userId         String
   propertyId     String
-  checkInDate    DateTime
-  checkOutDate   DateTime
+  checkinDate    DateTime
+  checkoutDate   DateTime
   numberOfGuests Int
   totalPrice     Float
   bookingStatus  String
@@ -51,8 +51,8 @@ model Property {
   description   String
   location      String
   pricePerNight Decimal
-  bedroomCount  Int
-  bathroomCount Int
+  bedRoomCount  Int
+  bathRoomCount Int
   maxGuestCount Int
   rating        Int
   bookings      Booking[]
@@ -82,15 +82,15 @@ model Review {
 }
 
 model Host {
-  id          String @id @default(uuid())
-  userName    String
-  password    String
-  name        String
-  email       String
-  phoneNumber String
-  pictureUrl  String
-  aboutMe     String
-  listings    Property[]
+  id              String @id @default(uuid())
+  username        String
+  password        String
+  name            String
+  email           String
+  phoneNumber     String
+  profilePicture  String
+  aboutMe         String
+  listings        Property[]
 }
 
 model Amenity {
