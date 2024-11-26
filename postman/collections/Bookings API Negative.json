@@ -2255,7 +2255,7 @@
         "type": "text/javascript",
         "exec": [
           "pm.sendRequest({",
-          "    url: 'http://0.0.0.0:3000/login',",
+          "    url: 'http://localhost:3000/login',",
           "    method: 'POST',",
           "    header: {",
           "        'Content-Type': 'application/json'",
