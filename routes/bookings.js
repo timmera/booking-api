@@ -83,17 +83,11 @@ router.put(
         bookingStatus,
       } = req.body;
 
-      // if (
-      //   !userId ||
-      //   !propertyId ||
-      //   !checkinDate ||
-      //   !checkoutDate ||
-      //   !numberOfGuests ||
-      //   !totalPrice ||
-      //   !bookingStatus
-      // ) {
-      //   return res.status(400).json({ message: 'No valid body in request!' });
-      // }
+      if (!req.body || Object.keys(req.body).length === 0) {
+        return res
+          .status(400)
+          .json({ message: 'Bad Request: Missing or empty request body' });
+      }
 
       const updatedBooking = await updateBookingById(
         id,
