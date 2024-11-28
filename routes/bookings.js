@@ -21,6 +21,10 @@ router.get('/', async (req, res, next) => {
         return res.status(400).json({ message: 'Invalid userId format' });
       }
       const bookings = await getBookingsByUserId(userId);
+      // Check if any booking belongs to the provided userId
+      if (!bookings.some((booking) => booking.userId === userId)) {
+        return res.status(404).json({ message: 'userId not found' });
+      }
       if (!bookings || bookings.length === 0) {
         return res
           .status(404)
