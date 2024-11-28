@@ -7,13 +7,29 @@ import createBooking from '../services/bookings/createBooking.js';
 import getBookingById from '../services/bookings/getBookingById.js';
 import updateBookingById from '../services/bookings/updateBookingById.js';
 import deleteBooking from '../services/bookings/deleteBooking.js';
+import getBookingsByUserId from '../services/bookings/getBookingsByUserId.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
+  const userId = req.query.userId;
+
   try {
-    const bookings = await getBookings();
-    res.status(200).json(bookings);
+    if (userId) {
+      const bookings = await getBookingsByUserId(userId);
+      if (!bookings || bookings.length === 0) {
+        return res
+          .status(404)
+          .json({ message: 'No bookings found for this user' });
+      }
+      return res.status(200).json(bookings);
+    } else {
+      const bookings = await getBookings();
+      if (!bookings || bookings.length === 0) {
+        return res.status(404).json({ message: 'No bookings found' });
+      }
+      res.status(200).json(bookings);
+    }
   } catch (error) {
     next(error);
   }
