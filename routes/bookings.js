@@ -16,6 +16,10 @@ router.get('/', async (req, res, next) => {
 
   try {
     if (userId) {
+      // Verify if the userId is correct format
+      if (!/^[0-9a-fA-F-]{36}$/.test(userId)) {
+        return res.status(400).json({ message: 'Invalid userId format' });
+      }
       const bookings = await getBookingsByUserId(userId);
       if (!bookings || bookings.length === 0) {
         return res
