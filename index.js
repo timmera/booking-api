@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import authMiddleware from './middleware/auth.js';
 import amenitiesRouter from './routes/amenities.js';
 import bookingsRouter from './routes/bookings.js';
+import hostsRouter from './routes/hosts.js';
 import loginRouter from './routes/login.js';
 import errorHandler from './middleware/errorHandler.js';
 import 'dotenv/config';
@@ -16,6 +17,7 @@ app.use(helmet());
 app.use('/login', loginRouter);
 app.use('/amenities', amenitiesRouter);
 app.use('/bookings', bookingsRouter);
+app.use('/hosts', hostsRouter);
 
 app.use(authMiddleware);
 
