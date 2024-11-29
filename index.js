@@ -1,6 +1,7 @@
 import express from 'express';
 import helmet from 'helmet';
 import authMiddleware from './middleware/auth.js';
+import logMiddleware from './middleware/logMiddleware.js';
 import amenitiesRouter from './routes/amenities.js';
 import bookingsRouter from './routes/bookings.js';
 import hostsRouter from './routes/hosts.js';
@@ -12,6 +13,7 @@ const app = express();
 
 app.use(express.json());
 app.use(helmet());
+app.use(logMiddleware);
 
 // routes
 app.use('/login', loginRouter);
