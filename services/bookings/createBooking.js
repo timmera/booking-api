@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import BadRequest from '../../errors/badRequestError.js';
 
 const createBooking = async (
   userId,
@@ -10,6 +11,17 @@ const createBooking = async (
   bookingStatus
 ) => {
   const prisma = new PrismaClient();
+  if (
+    !userId ||
+    !propertyId ||
+    !checkinDate ||
+    !checkoutDate ||
+    !numberOfGuests ||
+    !totalPrice ||
+    !bookingStatus
+  ) {
+    throw new BadRequest();
+  }
 
   return prisma.booking.create({
     data: {

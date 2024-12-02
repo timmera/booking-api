@@ -8,6 +8,7 @@ import getBookingById from '../services/bookings/getBookingById.js';
 import updateBookingById from '../services/bookings/updateBookingById.js';
 import deleteBooking from '../services/bookings/deleteBooking.js';
 import getBookingsByUserId from '../services/bookings/getBookingsByUserId.js';
+import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 
 const router = express.Router();
 
@@ -46,7 +47,7 @@ router.get('/', async (req, res, next) => {
 router.post(
   '/',
   authMiddleware,
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const {
         userId,
@@ -71,7 +72,7 @@ router.post(
       next(error);
     }
   },
-  notAuthorizedErrorHandler
+  badRequestErrorHandler
 );
 
 router.get(
@@ -87,8 +88,7 @@ router.get(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.put(
@@ -128,8 +128,7 @@ router.put(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.delete(
@@ -147,8 +146,7 @@ router.delete(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 export default router;
