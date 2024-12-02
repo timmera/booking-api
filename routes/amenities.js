@@ -1,12 +1,12 @@
 import express from 'express';
 import authMiddleware from '../middleware/auth.js';
 import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
-import notAuthorizedErrorHandler from '../middleware/notAuthorizedErrorHandler.js';
 import getAmenities from '../services/amenities/getAmenities.js';
 import createAmenity from '../services/amenities/createAmenity.js';
 import getAmenityById from '../services/amenities/getAmenityById.js';
 import updateAmenityById from '../services/amenities/updateAmenityById.js';
 import deleteAmenity from '../services/amenities/deleteAmenity.js';
+import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 
 const router = express.Router();
 
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.post(
   '/',
   authMiddleware,
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const { name } = req.body;
       const newAmenity = await createAmenity(name);
@@ -31,7 +31,7 @@ router.post(
       next(error);
     }
   },
-  notAuthorizedErrorHandler
+  badRequestErrorHandler
 );
 
 router.get(
@@ -47,8 +47,7 @@ router.get(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.put(
@@ -69,8 +68,7 @@ router.put(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.delete(
@@ -88,8 +86,7 @@ router.delete(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 export default router;

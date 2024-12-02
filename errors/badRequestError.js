@@ -1,5 +1,5 @@
 class BadRequest extends Error {
-  constructor(resourceType, id) {
+  constructor() {
     super(`Request body is invalid`);
     this.name = 'BadRequest';
   }

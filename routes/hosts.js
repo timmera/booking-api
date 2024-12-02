@@ -1,28 +1,40 @@
 import express from 'express';
 import authMiddleware from '../middleware/auth.js';
 import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
-import notAuthorizedErrorHandler from '../middleware/notAuthorizedErrorHandler.js';
 import getHosts from '../services/hosts/getHosts.js';
 import createHost from '../services/hosts/createHost.js';
 import getHostById from '../services/hosts/getHostById.js';
 import updateHostById from '../services/hosts/updateHostById.js';
 import deleteHost from '../services/hosts/deleteHost.js';
+import getHostByName from '../services/hosts/getHostByName.js';
+import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  try {
-    const hosts = await getHosts();
-    res.status(200).json(hosts);
-  } catch (error) {
-    next(error);
-  }
-});
+router.get(
+  '/',
+  async (req, res, next) => {
+    const name = req.query.name;
+
+    try {
+      if (name) {
+        const host = await getHostByName(name);
+        return res.status(200).json(host);
+      } else {
+        const hosts = await getHosts();
+        res.status(200).json(hosts);
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+  notFoundErrorHandler
+);
 
 router.post(
   '/',
   authMiddleware,
-  async (req, res) => {
+  async (req, res, next) => {
     try {
       const {
         username,
@@ -47,7 +59,7 @@ router.post(
       next(error);
     }
   },
-  notAuthorizedErrorHandler
+  badRequestErrorHandler
 );
 
 router.get(
@@ -63,8 +75,7 @@ router.get(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.put(
@@ -104,8 +115,7 @@ router.put(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 router.delete(
@@ -123,8 +133,7 @@ router.delete(
       next(error);
     }
   },
-  notFoundErrorHandler,
-  notAuthorizedErrorHandler
+  notFoundErrorHandler
 );
 
 export default router;

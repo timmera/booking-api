@@ -12,6 +12,7 @@ const updateBookingById = async (
   bookingStatus
 ) => {
   const prisma = new PrismaClient();
+
   const updatedBooking = await prisma.booking.updateMany({
     where: {
       id,

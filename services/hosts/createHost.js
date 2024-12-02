@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import BadRequest from '../../errors/badRequestError.js';
 
 const createHost = async (
   username,
@@ -10,7 +11,17 @@ const createHost = async (
   aboutMe
 ) => {
   const prisma = new PrismaClient();
-
+  if (
+    !username ||
+    !password ||
+    !name ||
+    !email ||
+    !phoneNumber ||
+    !profilePicture ||
+    !aboutMe
+  ) {
+    throw new BadRequest();
+  }
   return prisma.host.create({
     data: {
       username,
