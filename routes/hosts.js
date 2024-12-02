@@ -1,12 +1,12 @@
 import express from 'express';
 import authMiddleware from '../middleware/auth.js';
-import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
 import getHosts from '../services/hosts/getHosts.js';
 import createHost from '../services/hosts/createHost.js';
 import getHostById from '../services/hosts/getHostById.js';
 import updateHostById from '../services/hosts/updateHostById.js';
 import deleteHost from '../services/hosts/deleteHost.js';
 import getHostByName from '../services/hosts/getHostByName.js';
+import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
 import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 
 const router = express.Router();

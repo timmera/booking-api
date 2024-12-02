@@ -1,12 +1,12 @@
 import express from 'express';
 import authMiddleware from '../middleware/auth.js';
-import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
 import getBookings from '../services/bookings/getBookings.js';
 import createBooking from '../services/bookings/createBooking.js';
 import getBookingById from '../services/bookings/getBookingById.js';
 import updateBookingById from '../services/bookings/updateBookingById.js';
 import deleteBooking from '../services/bookings/deleteBooking.js';
 import getBookingsByUserId from '../services/bookings/getBookingsByUserId.js';
+import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
 import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 import noValidFormatErrorHandler from '../middleware/noValidFormatErrorHandler.js';
 
