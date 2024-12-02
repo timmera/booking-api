@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import NotFoundError from '../../errors/notFoundError.js';
+import BadRequest from '../../errors/badRequestError.js';
 
 const updateAmenityById = async (id, name) => {
   const prisma = new PrismaClient();
@@ -11,6 +12,10 @@ const updateAmenityById = async (id, name) => {
       name,
     },
   });
+
+  if (!name) {
+    throw new BadRequest();
+  }
 
   if (!updatedAmenity || updatedAmenity.count === 0) {
     throw new NotFoundError('Amenity', id);

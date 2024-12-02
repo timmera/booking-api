@@ -94,12 +94,6 @@ router.put(
         aboutMe,
       } = req.body;
 
-      if (!req.body || Object.keys(req.body).length === 0) {
-        return res
-          .status(400)
-          .json({ message: 'Bad Request: Missing or empty request body' });
-      }
-
       const updatedHost = await updateHostById(
         id,
         username,
@@ -115,7 +109,8 @@ router.put(
       next(error);
     }
   },
-  notFoundErrorHandler
+  notFoundErrorHandler,
+  badRequestErrorHandler
 );
 
 router.delete(

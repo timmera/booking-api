@@ -58,17 +58,14 @@ router.put(
       const { id } = req.params;
       const { name } = req.body;
 
-      if (!name) {
-        return res.status(400).json({ message: 'No valid body in request!' });
-      }
-
       const updatedAmenity = await updateAmenityById(id, name);
       res.status(200).json(updatedAmenity);
     } catch (error) {
       next(error);
     }
   },
-  notFoundErrorHandler
+  notFoundErrorHandler,
+  badRequestErrorHandler
 );
 
 router.delete(

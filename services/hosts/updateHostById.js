@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import NotFoundError from '../../errors/notFoundError.js';
+import BadRequest from '../../errors/badRequestError.js';
 
 const updateHostById = async (
   id,
@@ -26,6 +27,19 @@ const updateHostById = async (
       aboutMe,
     },
   });
+
+  // Check if at least one field is provided for update
+  if (
+    !username &&
+    !password &&
+    !name &&
+    !email &&
+    !phoneNumber &&
+    !profilePicture &&
+    !aboutMe
+  ) {
+    throw new BadRequest();
+  }
 
   if (!updatedHost || updatedHost.count === 0) {
     throw new NotFoundError('Host', id);
