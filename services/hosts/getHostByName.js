@@ -3,7 +3,7 @@ import NotFoundError from '../../errors/notFoundError.js';
 
 const getHostByName = async (name) => {
   const prisma = new PrismaClient();
-  const host = await prisma.host.findFirst({
+  const host = await prisma.host.findMany({
     where: {
       name: name,
     },
