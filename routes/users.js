@@ -5,19 +5,31 @@ import createUser from '../services/users/createUser.js';
 import getUserById from '../services/users/getUserById.js';
 import updateUserById from '../services/users/updateUserById.js';
 import deleteUser from '../services/users/deleteUser.js';
+import getUserByUsername from '../services/users/getUserByUserName.js';
 import notFoundErrorHandler from '../middleware/notFoundErrorHandler.js';
 import badRequestErrorHandler from '../middleware/badRequestErrorHandler.js';
 
 const router = express.Router();
 
-router.get('/', async (req, res, next) => {
-  try {
-    const users = await getUsers();
-    res.status(200).json(users);
-  } catch (error) {
-    next(error);
-  }
-});
+router.get(
+  '/',
+  async (req, res, next) => {
+    const username = req.query.username;
+
+    try {
+      if (username) {
+        const user = await getUserByUsername(username);
+        return res.status(200).json(user);
+      } else {
+        const users = await getUsers();
+        res.status(200).json(users);
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+  notFoundErrorHandler
+);
 
 router.post(
   '/',
