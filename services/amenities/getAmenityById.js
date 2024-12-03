@@ -9,7 +9,7 @@ const getAmenityById = async (id) => {
     },
   });
 
-  if (!amenity) {
+  if (!amenity || !amenity.length === 0) {
     throw new NotFoundError('Amenity', id);
   }
 
