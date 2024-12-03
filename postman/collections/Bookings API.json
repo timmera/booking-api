@@ -47,8 +47,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -94,8 +95,9 @@
                   "_postman_previewlanguage": "json",
                   "header": [
                     {
-                      "key": "Content-Type",
-                      "value": "application/json"
+                      "key": "Authorization",
+                      "value": "{{bearerToken}}",
+                      "type": "text"
                     }
                   ],
                   "cookie": [],
@@ -651,8 +653,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -698,8 +701,9 @@
                   "_postman_previewlanguage": "json",
                   "header": [
                     {
-                      "key": "Content-Type",
-                      "value": "application/json"
+                      "key": "Authorization",
+                      "value": "{{bearerToken}}",
+                      "type": "text"
                     }
                   ],
                   "cookie": [],
@@ -1255,8 +1259,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -1280,8 +1285,9 @@
                     "method": "GET",
                     "header": [
                       {
-                        "key": "Accept",
-                        "value": "application/json"
+                        "key": "Authorization",
+                        "value": "{{bearerToken}}",
+                        "type": "text"
                       }
                     ],
                     "url": {
@@ -1889,8 +1895,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -1914,8 +1921,9 @@
                     "method": "GET",
                     "header": [
                       {
-                        "key": "Accept",
-                        "value": "application/json"
+                        "key": "Authorization",
+                        "value": "{{bearerToken}}",
+                        "type": "text"
                       }
                     ],
                     "url": {
@@ -2544,8 +2552,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -2569,8 +2578,9 @@
                     "method": "GET",
                     "header": [
                       {
-                        "key": "Accept",
-                        "value": "application/json"
+                        "key": "Authorization",
+                        "value": "{{bearerToken}}",
+                        "type": "text"
                       }
                     ],
                     "url": {
@@ -3195,8 +3205,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -3220,8 +3231,9 @@
                     "method": "GET",
                     "header": [
                       {
-                        "key": "Accept",
-                        "value": "application/json"
+                        "key": "Authorization",
+                        "value": "{{bearerToken}}",
+                        "type": "text"
                       }
                     ],
                     "url": {

@@ -39,8 +39,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -398,8 +399,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -757,8 +759,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -1116,8 +1119,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -1475,8 +1479,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
@@ -1834,8 +1839,9 @@
                 "method": "GET",
                 "header": [
                   {
-                    "key": "Accept",
-                    "value": "application/json"
+                    "key": "Authorization",
+                    "value": "{{bearerToken}}",
+                    "type": "text"
                   }
                 ],
                 "url": {
