@@ -843,7 +843,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"title\": \"Updated Cozy Mountain Retreat\",\n  \"description\": \"Updated description for the cozy mountain retreat.\",\n  \"location\": \"Updated Location\",\n  \"pricePerNight\": 150.5,\n  \"bedroomCount\": 4,\n  \"bathRoomCount\": 3,\n  \"maxGuestCount\": 6,\n  \"rating\": 4.5\n}",
+                  "raw": "{\n  \"title\": \"Updated Cozy Mountain Retreat\",\n  \"description\": \"Updated description for the cozy mountain retreat.\",\n  \"location\": \"Updated Location\",\n  \"pricePerNight\": 150.5,\n  \"bedRoomCount\": 4,\n  \"bathRoomCount\": 3,\n  \"maxGuestCount\": 6,\n  \"rating\": 4.5\n}",
                   "options": {
                     "raw": {
                       "language": "json"
@@ -878,7 +878,7 @@
                     ],
                     "body": {
                       "mode": "raw",
-                      "raw": "{\n  \"title\": \"Updated Cozy Mountain Retreat\",\n  \"description\": \"Updated description for the cozy mountain retreat.\",\n  \"location\": \"Updated Location\",\n  \"pricePerNight\": 150.5,\n  \"bedroomCount\": 4,\n  \"bathRoomCount\": 3,\n  \"maxGuestCount\": 6,\n  \"rating\": 4.5\n}",
+                      "raw": "{\n  \"title\": \"Updated Cozy Mountain Retreat\",\n  \"description\": \"Updated description for the cozy mountain retreat.\",\n  \"location\": \"Updated Location\",\n  \"pricePerNight\": 150.5,\n  \"bedRoomCount\": 4,\n  \"bathRoomCount\": 3,\n  \"maxGuestCount\": 6,\n  \"rating\": 4.5\n}",
                       "options": {
                         "raw": {
                           "language": "json"
