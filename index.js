@@ -7,6 +7,7 @@ import bookingsRouter from './routes/bookings.js';
 import hostsRouter from './routes/hosts.js';
 import propertiesRouter from './routes/properties.js';
 import reviewsRouter from './routes/reviews.js';
+import usersRouter from './routes/users.js';
 import loginRouter from './routes/login.js';
 import errorHandler from './middleware/errorHandler.js';
 import 'dotenv/config';
@@ -49,6 +50,7 @@ app.use('/bookings', bookingsRouter);
 app.use('/hosts', hostsRouter);
 app.use('/properties', propertiesRouter);
 app.use('/reviews', reviewsRouter);
+app.use('/users', usersRouter);
 
 app.use(authMiddleware);
 
