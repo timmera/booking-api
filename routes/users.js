@@ -77,7 +77,7 @@ router.get(
 
 router.put(
   '/:id',
-
+  authMiddleware,
   async (req, res, next) => {
     try {
       const { id } = req.params;
