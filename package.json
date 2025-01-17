@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@prisma/adapter-pg": "^6.2.1",
     "@prisma/client": "^5.22.0",
     "@sentry/node": "^7.120.0",
     "@sentry/profiling-node": "^8.42.0",
@@ -24,6 +25,7 @@
     "express-oauth2-jwt-bearer": "^1.6.0",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
+    "pg": "^8.13.1",
     "uuid": "^9.0.0",
     "winston": "^3.17.0"
   },
