@@ -7,7 +7,7 @@ const getUsers = async () => {
     select: {
       id: true,
       username: true,
-      password: false, // Do not return the password
+      password: true,
       name: true,
       email: true,
       phoneNumber: true,

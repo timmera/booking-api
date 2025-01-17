@@ -1,17 +1,18 @@
 import { Router } from 'express';
-import userData from '../data/users.json' assert { type: 'json' };
+import getUsers from '../services/users/getUsers.js';
 import jwt from 'jsonwebtoken';
 
 const router = Router();
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const secretKey = process.env.AUTH_SECRET_KEY || 'my-secret-key';
 
+  const users = await getUsers();
   const { username, password } = req.body;
-  const { users } = userData;
-  const user = users.find(
-    (u) => u.username === username && u.password === password
-  );
+
+  const user = users.find((u) => {
+    return u.username === username && u.password === password;
+  });
 
   if (!user) {
     return res.status(401).json({ message: 'Invalid credentials!' });
