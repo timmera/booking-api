@@ -14,6 +14,7 @@ const router = express.Router();
 
 router.get(
   '/',
+  authMiddleware,
   async (req, res, next) => {
     const username = req.query.username;
     const email = req.query.email;

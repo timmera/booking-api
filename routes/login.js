@@ -18,8 +18,26 @@ router.post('/', async (req, res) => {
     return res.status(401).json({ message: 'Invalid credentials!' });
   }
 
-  const token = jwt.sign({ userId: user.id }, secretKey, { expiresIn: '1h' });
-  res.status(200).json({ message: 'Successfully logged in!', token });
+  const expirationTime = Math.floor(Date.now() / 1000) + 1 * 60; // 1 minute
+
+  const token = jwt.sign({ userId: user.id, exp: expirationTime }, secretKey);
+
+  try {
+    const token = jwt.sign({ userId: user.id, exp: expirationTime }, secretKey);
+    return res.status(200).json({
+      message: 'Successfully logged in!',
+      token,
+      user: {
+        id: user.id,
+        username: user.username,
+        // Add any other user details you want to include in the response
+      },
+    });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: 'Error creating token', error: error.message });
+  }
 });
 
 export default router;
