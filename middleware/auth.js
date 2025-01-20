@@ -12,6 +12,11 @@ const authMiddleware = (req, res, next) => {
 
   jwt.verify(token, secretKey, (err, decoded) => {
     if (err) {
+      if (err.name === 'TokenExpiredError') {
+        return res
+          .status(401)
+          .json({ message: 'Token has expired! Please create a token again!' });
+      }
       return res.status(403).json({ message: 'Invalid token provided!' });
     }
 
