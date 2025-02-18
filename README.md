@@ -1,62 +1,72 @@
-# BED Final Project Starter
+# Booking API
 
-This repository contains starter code for the Bookings project.
+This is a RESTful API for managing bookings in an online booking application. The API is built using Express.js and Prisma, and it provides endpoints for managing users, properties, bookings, reviews, and amenities.
 
-## How to get started
+## Features
 
-You can clone the repo, install and run the app with the following commands:
+- User authentication and authorization using JWT
+- CRUD operations for users, properties, bookings, reviews, and amenities
+- Error handling and validation
+- Logging and monitoring with Sentry
 
-```plaintext
-npm install
-npm run dev
+## Technologies Used
+
+- **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
+- **Prisma**: A next-generation ORM that helps to build faster and make fewer errors with an auto-generated and type-safe query builder.
+- **JWT (jsonwebtoken)**: A library to work with JSON Web Tokens for authentication and authorization.
+- **Sentry**: A monitoring and error tracking software that helps developers monitor and fix crashes in real-time.
+- **dotenv**: A zero-dependency module that loads environment variables from a `.env` file into `process.env`.
+- **Helmet**: A collection of middleware to help secure Express.js apps by setting various HTTP headers.
+- **Winston**: A versatile logging library for Node.js.
+- **Postman**: A collaboration platform for API development used for testing the API endpoints.
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (>=18 <19)
+- PostgreSQL
+
+### Installation
+
+1. Clone the repository:
+
+   ```sh
+   git clone https://github.com/timmera/booking-api.git
+   cd booking-api
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a [.env](http://_vscodecontentref_/7) file in the root directory and add the following variables:
+
+   ```env
+   DATABASE_URL=your-database-url
+   AUTH_SECRET_KEY=your-secret-key
+   ```
+
+4. Run database migrations and seed data:
+
+   ```sh
+   npx prisma migrate dev
+   npm run seed
+   ```
+
+5. Start the server:
+   ```sh
+   npm run dev
+   ```
+
+### Running Tests
+
+To run the tests, use the following commands:
+
+```sh
+npm run test-positive
+npm run test-negative
 ```
-
-## Starting the App
-
-To start the app, follow these steps:
-
-1. Create a `.env` file in the root directory.
-2. Replace the values for `AUTH_SECRET_KEY` and `SENTRY_DSN` with your own values.
-
-```plaintext
-AUTH_SECRET_KEY=your_secret_key_here
-SENTRY_DSN=your_sentry_dsn_here
-```
-
-## Running tests
-
-Tests are created using Newman, a command-line tool that is able to automate execution of Postman-created tests. Therefore, this command will simulate more or less the same tests that we executed during the course (e.g. test if the "happy case" returns 200 or 201 status code, or it returns 404 Not found when we are requesting a non-existing ID).
-
-To run the tests, perform the following steps:
-
-1. Start the server. This can usually be done by running `npm run dev` in the folder you want to test.
-2. Go to `postman/environments` folder in the repo. It has a content like this:
-
-```json
-{
-  "id": "f1936dc5-a5da-47d7-8189-045437f96e9e",
-  "name": "Local",
-  "values": [
-    {
-      "key": "baseUrl",
-      "value": "http://0.0.0.0:3000",
-      "type": "default",
-      "enabled": true
-    }
-  ],
-  "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2023-08-11T05:55:13.469Z",
-  "_postman_exported_using": "Postman/10.16.9"
-}
-```
-
-3. If your server is running on a different port or URL, change the value `http://0.0.0.0:3000` to your server's data (this is the default one though).
-4. Run the following command
-
-```plaintext
-npm test
-```
-
-After this, you will see the test results prompted to the terminal. If you have a look at the `package.json` file, you will see that it executes the collection stored in the `postman` folder of the repo root.
-
-Important: When dealing with JSON data, please, make sure that you restart the server with `npm run dev` every time you execute tests! This is important because some tests will remove data via DELETE endpoints and that operation cannot be repeated with the same ID again and again.
