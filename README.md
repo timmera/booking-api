@@ -13,6 +13,7 @@ This is a RESTful API for managing bookings in an online booking application. Th
 
 - **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 - **Prisma**: A next-generation ORM that helps to build faster and make fewer errors with an auto-generated and type-safe query builder.
+- **Supabase**: Provides a full Postgres database for every project with Realtime functionality, database backups, extensions, and more.
 - **JWT (jsonwebtoken)**: A library to work with JSON Web Tokens for authentication and authorization.
 - **Sentry**: A monitoring and error tracking software that helps developers monitor and fix crashes in real-time.
 - **dotenv**: A zero-dependency module that loads environment variables from a `.env` file into `process.env`.
@@ -25,7 +26,7 @@ This is a RESTful API for managing bookings in an online booking application. Th
 ### Prerequisites
 
 - Node.js (>=18 <19)
-- PostgreSQL
+- PostgreSQL or SQLite
 
 ### Installation
 
